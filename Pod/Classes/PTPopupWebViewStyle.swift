@@ -19,7 +19,7 @@ open class PTPopupWebViewStyle {
     // MARK: Content view's property
     open fileprivate(set) var outerMargin : UIEdgeInsets = UIEdgeInsets.zero
     open fileprivate(set) var innerMargin : UIEdgeInsets = UIEdgeInsets.zero
-    open fileprivate(set) var backgroundColor : UIColor = .white
+    open fileprivate(set) var backgroundColor : UIColor = .clear
     open fileprivate(set) var cornerRadius : CGFloat = 8.0
 
     // MARK: Content view's property setter
@@ -51,7 +51,7 @@ open class PTPopupWebViewStyle {
 
     // MARK: Title area's property
     open fileprivate(set) var titleHeight : CGFloat = 40.0
-    open fileprivate(set) var titleHidden = false
+    open fileprivate(set) var titleHidden = true
     open fileprivate(set) var titleBackgroundColor : UIColor = .clear
     open fileprivate(set) var titleForegroundColor : UIColor = .darkGray
     open fileprivate(set) var titleFont : UIFont = .systemFont(ofSize: 16)
@@ -91,7 +91,7 @@ open class PTPopupWebViewStyle {
 
     // MARK: Button area's property
     open fileprivate(set) var buttonHeight : CGFloat = 40
-    open fileprivate(set) var buttonHidden = false
+    open fileprivate(set) var buttonHidden = true
     open fileprivate(set) var buttonBackgroundColor : UIColor = .clear
     open fileprivate(set) var buttonForegroundColor : UIColor = UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)
     open fileprivate(set) var buttonDisabledColor : UIColor = .lightGray
@@ -170,6 +170,6 @@ open class PTPopupWebViewControllerStyle : PTPopupWebViewStyle {
         let screenBounds = UIScreen.main.bounds
         let vMargin = screenBounds.height * 0.1
         let hMargin = screenBounds.width  * 0.05
-        outerMargin = UIEdgeInsetsMake(vMargin, hMargin, vMargin, hMargin)
+        outerMargin = UIEdgeInsets(top: vMargin, left: hMargin, bottom: vMargin, right: hMargin)
     }
 }
